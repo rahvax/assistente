@@ -16,9 +16,9 @@ def transcript(recorded):
     if not recorded:
         return False
     try:
-        text = rec.recognize_google(recorded, language="pt-BR")
+        text = rec.recognize_ibm(recorded, "KEY_HERE", "pt-BR")
         print(f"[@] {text}")
-        return text.lower()
+        return text
     except sr.UnknownValueError:
         print("[!] não foi possível ouvir")
         return False
